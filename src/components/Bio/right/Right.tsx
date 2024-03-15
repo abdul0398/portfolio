@@ -1,17 +1,23 @@
 import Image from 'next/image'
+import { CardBody, CardContainer, CardItem } from '@/components/ui/image-hover'
 
-export default function Right(){
+export default function Right() {
     return (
-        <div className="w-1/2 text-white flex justify-center">
-            <div className="w-3/4 h-3/4 border-white border my-auto">
-                <Image
-                src="/dp.jpg"
-                alt='profile picture'
-                width={300}
-                height={300}
-                className='rounded-full'
-                />
-            </div>
+        <div className="w-1/3 text-white flex">
+            <CardContainer className="inter-var h-fit">
+                <CardBody>
+                    <CardItem translateZ="100">
+                        <Image
+                             src="/dp.png"
+                             height="1000"
+                             width="1000"
+                             className="h-96 w-full object-cover group-hover/card:shadow-xl mix-blend-multiply"                            
+                             alt="thumbnail"
+                        />
+                    </CardItem>
+                </CardBody>
+            </CardContainer>
+        
         </div>
     )
 }

@@ -56,13 +56,13 @@ export const TextRevealCard = ({
       onMouseMove={mouseMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-[#1d1c20] border border-white/[0.08] w-[40rem] rounded-lg relative overflow-hidden",
+        "bg-transparent lg:ms-28 mx-auto text-center lg:text-left border border-white/[0.08] w-[40rem] rounded-lg relative overflow-hidden",
         className
       )}
     >
       {children}
 
-      <div className="h-40  relative flex items-center overflow-hidden">
+      <div className=" dark:bg-black bg-black  dark:bg-dot-white/[0.2] bg-dot-white/[0.2] relative flex items-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -78,7 +78,7 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1d1c20] z-20  will-change-transform"
+          className="absolute  dark:bg-black bg-black  dark:bg-dot-white/[0.2] bg-dot-white/[0.2] z-20  will-change-transform"
         >
           <p
             style={{
@@ -99,11 +99,11 @@ export const TextRevealCard = ({
           className="h-40 w-[8px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
+        <div className=" overflow-hidden  dark:bg-black bg-black  dark:bg-dot-white/[0.2] bg-dot-white/[0.2]">
           <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]">
             {text}
           </p>
-          <MemoizedStars />
+          {/* <MemoizedStars /> */}
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@ const Stars = () => {
   const random = () => Math.random();
   return (
     <div className="absolute inset-0">
-      {[...Array(140)].map((_, i) => (
+      {[...Array(200)].map((_, i) => (
         <motion.span
           key={`star-${i}`}
           animate={{
